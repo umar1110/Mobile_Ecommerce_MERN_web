@@ -95,15 +95,15 @@ useEffect(() => {
           <div className="dashboardSummaryBox2">
             <Link to="/admin/products">
               <p>Product</p>
-              <p>{products && products.length}</p>
+              <p>{products && products.length?products.length:0}</p>
             </Link>
             <Link to="/admin/orders">
               <p>Orders</p>
-              <p>{orders && orders.length}</p>
+              <p>{orders && orders.length?orders.length:0}</p>
             </Link>
             <Link to="/admin/users">
               <p>Users</p>
-              <p>{users&&users.length}</p>
+              <p>{users&&users.length?users.length:0}</p>
             </Link>
           </div>
         </div>
