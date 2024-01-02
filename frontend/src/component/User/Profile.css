@@ -1,11 +1,11 @@
 .profileContainer {
     display: flex;
-    height: 100vh;
+    
     width: 100vw;
     top: 0%;
     left: 0%;
     max-width: 100%;
-    background-color: white;
+    
   }
   
   .profileContainer > div {

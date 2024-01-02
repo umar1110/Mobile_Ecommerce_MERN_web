@@ -69,6 +69,7 @@ function App() {
       <Helmet title="CellCave" />
       <Header />
       {isAuthenticated && <UserOptions user={user} />}
+
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/contact" element={<Contact />} />

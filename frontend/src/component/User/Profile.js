@@ -23,7 +23,7 @@ const Profile = () => {
       ) : (
         <>
           <MetaData title={`${user.name}'s Profile`} />
-          <div className="my-24 profileContainer">
+          <div className=" h-[150vh] bg-white overflow-y-scroll z-50 my-24 profileContainer">
             <div>
               <h1>My Profile</h1>
               <img src={user.avatar.url} alt={user.name} />
