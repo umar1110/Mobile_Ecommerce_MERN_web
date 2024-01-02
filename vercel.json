@@ -1,0 +1,35 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "frontend",
+        "use": "@vercel/static-build"
+      },
+      {
+        "src": "backend/server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+        {
+            "src": "/.*",
+            "dest": "backend/server.js" 
+        }
+    ],
+    "env": {
+        "PORT": "3000",
+        "DB_URI": "mongodb+srv://umarrajpoot10022004:umar1110@cellcave.txijojc.mongodb.net/Ecommerce",
+        "JWT_SECRET": "klajdklajdklahsjkasjkncjsbuikabefjkafh",
+        "JWT_EXPIRE": "5d",
+        "COOKIE_EXPIRE": "5",
+        "SMTP_MAIL": "umarworkbase10@gmail.com",
+        "SMTP_PASSWORD": "drwfhjhbwpuhbctd",
+        "SMTP_SERVICE": "gmail",
+        "CLOUDINARY_NAME": "dvobpdvef",
+        "CLOUDINARY_API_KEY": "792281223446991",
+        "CLOUDINARY_API_SECRET": "JfktuvF-URvu9Bbu78ePLIJBD3Q",
+        "FRONTEND_URL": "http://localhost:3000",
+        "STRIPE_API_KEY": "pk_test_51OAOsDSErk2qB1M1PdjD39sszuq2rJ8bqvhp8EClOUC1ykXW5k5VFosxh7nGBI9XkWbSSlyd4xK32jauGSv8ofYB004Tlx7Ehv",
+        "STRIPE_SECRET_KEY": "sk_test_51OAOsDSErk2qB1M1SbNZJEAtzBYo32Vugz8qZSdPD2VDs5E7iEELRYZ6iXy45fUwCO77QwXW0IV9xNsWfUb9zLbs006zddn7UQ"
+    }
+}

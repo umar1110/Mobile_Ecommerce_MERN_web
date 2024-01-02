@@ -1,0 +1,15 @@
+.active{
+    color: black;
+  }
+  .nav-bar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10px; /* Adjust the height of the shade as needed */
+    background: linear-gradient(to bottom, rgba(224, 119, 14, 0.1), rgba(255, 255, 255, 0.8));
+  }
+
+ 
+ 

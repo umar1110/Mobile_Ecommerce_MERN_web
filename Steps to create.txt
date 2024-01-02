@@ -1,0 +1,96 @@
+Create server and connect on local host 
+create app.js and set all routes for products
+create routes and their controllers 
+connect mongodb server in server.js
+create complete crud 
+error handling in crud ( eg product not found etc)
+    1- Handle error when product id is not correct 
+    2- handle Error when anything missing which required in schema by catchAsyncFuncError
+    3- handle error when mongodb server link is not true => unhandleRejection in server.js
+    4- Handling error when any variable is use but not defined => Handling uncaught Exception
+    5- Wrong Mongo id error handle , if id is short provided 
+
+**** Search, Filter ,Pagination *****
+search according to keyword
+filter according to any category or price 
+pagination in features
+
+*********** Backend user and password athentication **************
+
+-install necessary packages => npm i 
+    bcryptjs
+    jsonwebtoken
+    validator
+    nodemailer
+    cookie-parser
+    body-parser
+
+-Create user model
+-create usercontroller and routes and use them in app to
+- register user
+
+- password bcrypt using package bcrypt in user schema\
+
+-- create jwttoken fron function sendToken
+-- login function for users
+
+--- Setup authentication on accessing routes (user or admin or both)
+
+--- resetPassword function 
+    - create reset token using crypto and store it in model 
+    - set this token in url 
+
+************* Backend User Routes Api *************** mtlb a user want to access profile or change profile 
+
+    -- Admin functions in usercontrollers
+    -- Functions for reviws in product conttroller
+    -- update / delete review
+
+*******************  Making Order Api ***********************
+    -- all order admin and user functions 
+
+
+just 2 things left 
+
+1- to add images from cloudanary
+2- Payment procedure  
+
+
+############# BAckend End #################
+############# Frontend Start #################
+
+1 Navbar 
+2- Footer
+3-Home page with Product Elements 
+
+
+Packages :
+
+React-Helmet    --> This reusable React component will manage all of your changes to the document head.
+
+
+
+
+******  Starting REDUX ********
+
+1- create store 
+2-Wrap app with provider in index.js
+
+
+
+add proxy in package jsonof frontend to run both backend and frontend on splited terminals 
+
+all products , product details using pass id in url than get it by useParams() 
+create search than store searchParam in url , than get iot and pass in function acrion of getproducts and filter it 
+
+
+create page of login ot register user
+reducers and actions for user 
+user for login and for register 
+in register we pass form data ******************** 
+
+
+
+??????   in BAckend  ?????????
+now "cloudinary"
+express-fileuploader

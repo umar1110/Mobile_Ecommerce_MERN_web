@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+/* For Removing the arrows from inpput to updown */
+/* For Chrome , Safari, Edge , Opera */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.greenColor{
+  color: green;
+}
+.redColor{
+  color: red;
+}

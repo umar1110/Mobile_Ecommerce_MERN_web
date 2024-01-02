@@ -1,0 +1,78 @@
+--> catchAsyncFuncError in productcontroller.js  => very imp
+
+--> 1:30:00  => search method 
+
+--> 2:10:00  => userSchema.pre()  and learn other methods on schema
+
+--> learn complete jsonwebtoken again to login logout
+
+--> mongodbqueries .....blabla.find().select("password") => userController.js  36 line
+
+--> cookies set by [ res.cookie ] also no s , and accept by [ req.cookies ] with s
+
+--> use of crypto to generate random value
+
+--> nodemailer to send mails , with app generate password
+
+--> look complete error.js , see what is err.keyvalue 
+
+-- > bereif study jsonwebtoken
+
+--> Can modify delete review function , k jo user ha sirf apna delete kr sky
+
+--> db.find().populate()  -> and also ref in schema
+
+******    Backend End  *************
+
+
+******   Front End START ************
+
+Regex flow :  for useDispach ==>  action --> reducer --> statemodify
+	      for useSelector ==> combine reducer ---> check the state(reducer) name --> give matching reducer state value 
+
+Reducer and actions for all products request 
+
+Loader when products between requests and success or fail
+
+Reducer and actions fro one product details 
+
+how to Excess params from url in routing like in backend , we do req.body.id 
+in frontend we do match.params.id, but it not works so , we use {id} = useParams() from react routes 
+no need to pass props
+
+useNavigate , useParams(), useSearchParams() etc in react router dom 
+add image from input file and access only specific extention types file like image/png
+FileReader Class in js LoginSignUp.js
+
+// Method 1- To get search querries 
+// const searchParams = new URLSearchParams(location.search);
+// const redirectK = searchParams.get('redirect');
+// console.log(redirectK)
+
+//  Method 2 to get search queries
+// let [searchParams, setSearchParams] = useSearchParams();
+// console.log(searchParams.get("redirect"))
+
+
+ Stripe website for payment gatway 
+ use eaasypesssa , jazzcash, hbl gateways
+
+Error :  When reload on orders page , it going back to account page , in any protected route
+11:43
+
+
+Jab bhi orders me jao to nechay profile circle ki space ki wjh sy wo link( go to order details ) pr nai nai
+ja skty khas mobile pr.
+
+contentheader for form , and also formdata set or get and send
+
+Jab order cart me chla gya , or stock ho na or phr bhi payment ho jati , 
+udher phly check krna k kya itna stock ha bhi ? nahi to checkout sy phly hhi wapis ho lo
+
+remove search bar 
+
+
+
+
+
+update product without add any pic with old pic -> error and add no image 

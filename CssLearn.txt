@@ -1,0 +1,11 @@
+font-size: 1vmax;
+clip-path: polygon(100% 68%,0 100%, 100% 100%);     // in home css using clippy css website 
+scroll-behavior: smooth;    in app.css
+flex-wrap: wrap;
+
+animation for loader
+ place-items: center;   in grid
+
+
+
+

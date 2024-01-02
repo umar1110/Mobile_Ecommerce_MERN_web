@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-cc{
+    background-color: rgb(233, 106, 15);
+    color: white;
+}
+
+  .btn-cc{
+    background-color: black;
+    color: white;
+  }
+  
+  .greenColor{
+    color: green;
+  }
+  .redColor{
+    color: red;
+  }
