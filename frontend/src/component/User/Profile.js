@@ -17,13 +17,13 @@ const Profile = () => {
         console.log("no")
   }, []);
   return (
-    <Fragment>
+    <>
       {loading && false ? (
         <Loader />
       ) : (
-        <Fragment>
+        <>
           <MetaData title={`${user.name}'s Profile`} />
-          <div className="mt-24 profileContainer">
+          <div className="my-24 profileContainer">
             <div>
               <h1>My Profile</h1>
               <img src={user.avatar.url} alt={user.name} />
@@ -49,9 +49,9 @@ const Profile = () => {
               </div>
             </div>
           </div>
-        </Fragment>
+        </>
       )}
-    </Fragment>
+   </>
   );
 };
 
