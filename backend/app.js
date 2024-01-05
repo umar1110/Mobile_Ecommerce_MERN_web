@@ -10,10 +10,15 @@ dotenv.config({ path: 'backend/config/config.env' })
 
 // app.use(express.json())    // becauase we need large amount send and limit is not set
 
+app.use(express.urlencoded({limit: '50mb',extended:true}));
 app.use(cookieParser())
 // app.use(express.urlencoded({extended: true}));
 app.use(fileUpload())
-app.use(express.urlencoded({limit: '50mb'}));
+
+var bodyParser = require('body-parser');
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+
 app.use(express.json({limit: '50mb'}));
 
 
