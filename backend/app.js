@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express() 
 const cookieParser = require('cookie-parser')
-const fileUpload= require("express-fileupload")
+// const fileUpload= require("express-fileupload")
 const dotenv = require('dotenv');
 dotenv.config({ path: 'backend/config/config.env' })
 
@@ -10,16 +10,13 @@ dotenv.config({ path: 'backend/config/config.env' })
 
 // app.use(express.json())    // becauase we need large amount send and limit is not set
 
-app.use(express.urlencoded({limit: '50mb',extended:true}));
 app.use(cookieParser())
 // app.use(express.urlencoded({extended: true}));
-app.use(fileUpload())
+// app.use(fileUpload())
 
-var bodyParser = require('body-parser');
-app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+app.use(express.urlencoded({ limit: '50mb', extended: false, parameterLimit: 50000 }));
+app.use(express.json({ extended: false, limit: '50mb' }))
 
-app.use(express.json({limit: '50mb'}));
 
 
 const errorMiddleware = require("./middleware/error")
