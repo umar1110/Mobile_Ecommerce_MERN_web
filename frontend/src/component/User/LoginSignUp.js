@@ -64,14 +64,14 @@ function LoginSignUp() {
   const registerSubmit = (e) => {
     e.preventDefault();
 
-    const myForm = new FormData(); // *******************************************************
+    const myForm = {
+      name,
+      email,password,avatar
+    }; // *******************************************************
 
-    myForm.set("name", name);
-    myForm.set("email", email);
-    myForm.set("password", password);
-    myForm.set("avatar", avatar);
 
-    console.log(myForm.get("name"));
+
+    
     dispatch(register(myForm));
   };
 
