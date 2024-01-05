@@ -81,7 +81,6 @@ function App() {
         <Route exact path="/login" Component={LoginSignUp} />
         {/* <Route exact path="/account" element={isAuthenticated?<Profile/>:<MoveToLogin/>} /> */}
         <Route exact path="/account" element={<AccProtectedRoute />} />
-        <Route exact path="/me/update" element={<PrUpdateProtectedRoute />} />
         <Route exact path="/password/update" element={<PassUpdateRoute />} />
         <Route exact path="/password/forgot" element={<ForgotPassword />} />
         <Route

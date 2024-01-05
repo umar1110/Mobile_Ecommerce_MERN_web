@@ -24,7 +24,7 @@ function LoginSignUp() {
   const switcherTab = useRef(null);
   const loginTab = useRef(null);
   const registerTab = useRef(null);
-  const fileBtn = useRef(null);
+
 
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -96,10 +96,7 @@ function LoginSignUp() {
     }
   };
 
-  const openImageSelector = () => {
-    fileBtn.current.click();
-  };
-
+ 
   // Method 1- To get search querries
   // const searchParams = new URLSearchParams(location.search);
   // const redirectK = searchParams.get('redirect');
@@ -180,19 +177,7 @@ function LoginSignUp() {
                 encType="multipart/form-data"
                 onSubmit={registerSubmit}
               >
-                <div
-                  onClick={openImageSelector}
-                  className="profilePicDic cursor-pointer flex-col flex justify-center items-center"
-                >
-                  <img
-                    className="profilePic"
-                    src={avatarPreview}
-                    alt="Avatar Preview"
-                  />
-                  <h2 className="font-[300] text-gray-500">
-                    Upload Profile Pic
-                  </h2>
-                </div>
+              
                 <div className="signUpName">
                   <div className="absolute translate-x-2">
                     <svg
@@ -242,16 +227,7 @@ function LoginSignUp() {
                   />
                 </div>
 
-                <div id="registerImage">
-                  <input
-                    className="hidden"
-                    ref={fileBtn}
-                    type="file"
-                    name="avatar"
-                    accept="image/*"
-                    onChange={registerDataChange}
-                  />
-                </div>
+             
                 <input type="submit" value="Register" className="signUpBtn" />
               </form>
             </div>
