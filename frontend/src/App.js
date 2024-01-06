@@ -15,7 +15,7 @@ import { loadUser } from "./actions/userAction";
 import UserOptions from "./component/layout/Header/UserOptions.js";
 import { useSelector } from "react-redux";
 import AccProtectedRoute from "./component/Route/AccProtectedRoute";
-import PrUpdateProtectedRoute from "./component/Route/PrUpdateProtectedRoute";
+// import PrUpdateProtectedRoute from "./component/Route/PrUpdateProtectedRoute";
 import PrConfirmOrderRoute from "./component/Route/PrConfirmOrderRoute.js";
 import PassUpdateRoute from "./component/Route/PassUpdateRoute.js";
 import PrShippingRoute from "./component/Route/PrShippingRoute.js";
@@ -31,7 +31,7 @@ import PrAdOrder from "./component/Route/PrAdOrder.js";
 import PrAdUsers from "./component/Route/PrAdUsers.js";
 import PrAdUser from "./component/Route/PrAdUser.js";
 import PrAdReviews from "./component/Route/PrAdReviews.js";
-import PageNotFound from "./component/Pages/PageNotFound/PageNotFound.js"
+import PageNotFound from "./component/Pages/PageNotFound/PageNotFound.js";
 import PrMyOrdersRoute from "./component/Route/PrMyOrdersRoute.js";
 import ForgotPassword from "./component/User/FotgotPassword.js";
 import ResetPassword from "./component/User/ResetPassword.js";
@@ -39,6 +39,7 @@ import Cart from "./component/Cart/Cart.js";
 import axios from "axios";
 import Contact from "./component/Pages/Contact/Contact.js";
 import About from "./component/Pages/About/About.js";
+// import { createContext } from "react";
 // import ProtectedRoute from "./component/Route/ProtectedRoute.js";
 
 function App() {
@@ -51,15 +52,9 @@ function App() {
     setStripeApiKey(data.stripeApiKey);
   }
 
-
-
   useEffect(() => {
-  
-     
-     getStripeApiKey()
-   
-   
-  
+    getStripeApiKey();
+
     store.dispatch(loadUser());
     // getStripeApiKey();
   }, []);
@@ -118,19 +113,19 @@ function App() {
           element={<PrAdProductListRoute />}
         />
 
-       
-
         <Route exact path={"/admin/product/"} element={<PrAdNewProduct />} />
-        <Route exact path={"/admin/product/:id"} element={<PrAdUpdateProduct />} />
+        <Route
+          exact
+          path={"/admin/product/:id"}
+          element={<PrAdUpdateProduct />}
+        />
         <Route exact path={"/admin/orders"} element={<PrAdOrders />} />
         <Route exact path={"/admin/order/:id"} element={<PrAdOrder />} />
         <Route exact path={"/admin/users"} element={<PrAdUsers />} />
         <Route exact path={"/admin/user/:id"} element={<PrAdUser />} />
         <Route exact path={"/admin/reviews"} element={<PrAdReviews />} />
 
-
         <Route exact path={"*"} element={<PageNotFound />} />
-
       </Routes>
       {/* 
       <ProtectedRoute

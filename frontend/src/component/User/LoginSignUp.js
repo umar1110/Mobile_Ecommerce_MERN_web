@@ -25,7 +25,6 @@ function LoginSignUp() {
   const loginTab = useRef(null);
   const registerTab = useRef(null);
 
-
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [user, setUser] = useState({
@@ -57,7 +56,6 @@ function LoginSignUp() {
 
   const loginSubmit = (e) => {
     e.preventDefault();
-
     dispatch(login(loginEmail, loginPassword));
   };
 
@@ -66,12 +64,11 @@ function LoginSignUp() {
 
     const myForm = {
       name,
-      email,password,avatar
+      email,
+      password,
+      avatar,
     }; // *******************************************************
 
-
-
-    
     dispatch(register(myForm));
   };
 
@@ -96,7 +93,6 @@ function LoginSignUp() {
     }
   };
 
- 
   // Method 1- To get search querries
   // const searchParams = new URLSearchParams(location.search);
   // const redirectK = searchParams.get('redirect');
@@ -177,7 +173,6 @@ function LoginSignUp() {
                 encType="multipart/form-data"
                 onSubmit={registerSubmit}
               >
-              
                 <div className="signUpName">
                   <div className="absolute translate-x-2">
                     <svg
@@ -227,7 +222,6 @@ function LoginSignUp() {
                   />
                 </div>
 
-             
                 <input type="submit" value="Register" className="signUpBtn" />
               </form>
             </div>
