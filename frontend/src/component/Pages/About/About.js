@@ -26,7 +26,7 @@ const About = () => {
               Visit Linkdin
             </Button>
             <span>
-              This is my MERN Stack complete Project . This is a sample project for learning only . If you find any thing to change ,kindly contact freely to make me improve . 
+              This is my MERN Stack complete Project. Some modifications and optimisation left yet.
             </span>
           </div>
          
