@@ -18,15 +18,13 @@ const About = () => {
           <div>
             <Avatar
               style={{ width: "10vmax", height: "10vmax", margin: "2vmax 0" }}
-              src="https://res.cloudinary.com/dvobpdvef/image/upload/v1702994254/WhatsApp_Image_2023-12-19_at_6.57.10_PM_tszfof.jpg"
+              src="https://res.cloudinary.com/dvobpdvef/image/upload/v1708695561/aaf936da-0222-4901-b2b5-e008f48bc2fc_rmtkrd.jpg"
               alt="Founder"
             />
-            <h1 className="font-semibold">M.Umar Aziz</h1>
-            <Button onClick={visitInstagram} color="primary">
-              Visit Linkdin
-            </Button>
+            <h1 className="font-semibold">Tech Cave</h1>
+           
             <span>
-              This is my MERN Stack complete Project. Some modifications and optimisation left yet.
+                 Wait for further about , we are working on it 
             </span>
           </div>
          

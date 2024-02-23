@@ -47,7 +47,7 @@ const location = useLocation()
           <div className="flex justify-between items-center ">
             <Link to={"/"} onClick={movePageStart}>
               {" "}
-              <h1 className="font-bold  cursor-pointer text-3xl">CellCave</h1>
+              <h1 className="font-bold  cursor-pointer text-3xl">Tech Hub</h1>
             </Link>
           </div>
 
