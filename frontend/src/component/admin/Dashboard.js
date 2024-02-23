@@ -1,51 +1,51 @@
-import React,{ useEffect } from "react";
+import React, { useEffect } from "react";
 
 import Sidebar from "./Sidebar.js";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Doughnut, Line } from "react-chartjs-2";
-import {Chart,registerables} from "chart.js"
+import { Chart, registerables } from "chart.js";
 import "./dashboard.css";
-import { useSelector,useDispatch } from "react-redux";
-import { getAdminProduct,clearErrors } from "../../actions/productAction.js";
+import { useSelector, useDispatch } from "react-redux";
+import { getAdminProduct, clearErrors } from "../../actions/productAction.js";
 import { getAllOrders } from "../../actions/orderAction.js";
 import { getAllUsers } from "../../actions/userAction.js";
 function Dashboard() {
   const dispatch = useDispatch();
   const { error, products } = useSelector((state) => state.products);
-  const {orders}  = useSelector((state)=>state.allOrders)
+  const { orders } = useSelector((state) => state.allOrders);
   const { users } = useSelector((state) => state.allUsers);
 
+  let outOfStock = 0;
 
-
-  let outOfStock =0;
-
-  products && products.forEach((item) => {
-    if(item.stock === 0){
-      outOfStock++;
-    }
-  });
+  products &&
+    products.forEach((item) => {
+      if (item.stock === 0) {
+        outOfStock++;
+      }
+    });
 
   useEffect(() => {
-    window.scroll(0,0)
+    window.scroll(0, 0);
 
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
-    
+
     dispatch(getAdminProduct());
-    dispatch(getAllOrders)
-    dispatch(getAllUsers)
+    dispatch(getAllOrders);
+    dispatch(getAllUsers);
   }, [dispatch, error]);
 
-let totalAmount =0;
-orders&&orders.forEach((or)=>{
-  totalAmount+=or.totalAmount;
-})
+  let totalAmount = 0;
+  orders &&
+    orders.forEach((or) => {
+      totalAmount += or.totalAmount;
+    });
 
   const lineState = {
-    labels: ["Initial Amount", "Amount Earned","Eeeee"],
+    labels: ["Initial Amount", "Amount Earned", "Eeeee"],
     datasets: [
       {
         label: "TOTAL AMOUNT",
@@ -57,27 +57,23 @@ orders&&orders.forEach((or)=>{
     ],
   };
 
-
   const doughnutState = {
-    labels: ["Out of Stock", "InStock",],
+    labels: ["Out of Stock", "InStock"],
     datasets: [
       {
         backgroundColor: ["#00A6B4", "#6800B4"],
         hoverBackgroundColor: ["#4B5000", "#35014F"],
-        data: [outOfStock, products.length-outOfStock],
+        data: [outOfStock, products.length ? products.length - outOfStock : 0],
       },
     ],
   };
   Chart.register(...registerables);
 
-useEffect(() => {
-  
- 
-  dispatch(getAdminProduct());
-  dispatch(getAllOrders());
-  dispatch(getAllUsers());
- 
-}, [dispatch])
+  useEffect(() => {
+    dispatch(getAdminProduct());
+    dispatch(getAllOrders());
+    dispatch(getAllUsers());
+  }, [dispatch]);
 
   return (
     <div className="mt-24 dashboard">
@@ -89,27 +85,27 @@ useEffect(() => {
         <div className="dashboardSummary">
           <div>
             <p>
-              Total Amount <br /> ₹{totalAmount ? totalAmount:0}
+              Total Amount <br /> ₹{totalAmount ? totalAmount : 0}
             </p>
           </div>
           <div className="dashboardSummaryBox2">
             <Link to="/admin/products">
               <p>Product</p>
-              <p>{products && products.length?products.length:0}</p>
+              <p>{products && products.length ? products.length : 0}</p>
             </Link>
             <Link to="/admin/orders">
               <p>Orders</p>
-              <p>{orders && orders.length?orders.length:0}</p>
+              <p>{orders && orders.length ? orders.length : 0}</p>
             </Link>
             <Link to="/admin/users">
               <p>Users</p>
-              <p>{users&&users.length?users.length:0}</p>
+              <p>{users && users.length ? users.length : 0}</p>
             </Link>
           </div>
         </div>
 
         <div className="lineChart">
-          <Line data={lineState}  />
+          <Line data={lineState} />
         </div>
         <div className="doughnutChart ">
           <Doughnut data={doughnutState} />
